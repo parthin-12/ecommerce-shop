@@ -1,0 +1,128 @@
+.dashboard{
+    width: 100vw;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    position:absolute;
+}
+
+.dashboardContainer{
+    background-color: white;
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    padding:3rem 0;
+}
+
+.dashboardContainer >h1{
+    color: rgba(0, 0, 0, 0.75);
+    font:300 2rem "Roboto";
+    margin:auto;
+    padding: 1.5rem;
+    width: 50%;
+    text-align: center;
+}
+
+.dashboardSummary{
+    margin: 2rem 0;
+}
+
+.dashboardSummary >div{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.dashboardSummary >div>p{
+    background-color: rgba(0, 115, 215, 0.95);
+    color: white;
+    width: 100%;
+    margin:0 2rem;
+    padding: 1.3rem;
+    text-align: center;
+    font:500 1.3rem "Roboto";
+    font-family:'Times New Roman', Times, serif;
+}
+
+.dashboardSummaryBox2 >a{
+    color: black;
+    font:300 2rem "Roboto";
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color:rgb(196, 136, 253);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 100%;
+    padding: 1.5rem;
+    height: 10vmax;
+    margin:2rem;
+    width: 10vmax;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.dashboardSummaryBox2 >a:hover{
+    background-color: rgb(176, 92, 255);
+}
+
+.dashboardSummaryBox2 >a:hover{
+    transform: scale(1.1);
+}
+
+.dashboardSummaryBox2 >a:first-child{
+    background-color: rgb(255, 129, 112);
+}
+
+.dashboardSummaryBox2 >a:first-child:hover{
+    background-color: rgb(255, 85, 62);
+}
+
+
+.dashboardSummaryBox2 >a:last-child{
+    background-color:rgb(122, 255, 255);
+}
+
+.dashboardSummaryBox2 >a:last-child:hover{
+    background-color: rgb(50, 254, 254);
+}
+
+.lineChart{
+    width: 80%;
+    margin:auto;
+}
+
+.lineChart >h1,
+.doughnutChart >h1
+{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
+    font:200 1.5rem "Roboto";
+    padding-bottom: 2rem;
+}
+
+.doughnutChart{
+    padding-top: 4rem;
+    width: 30vmax;
+    margin: auto;
+}
+
+@media screen and (max-width:600px) {
+    .dashboard{
+        grid-template-columns: 1fr;
+    }
+
+    .dashboardContainer{
+        border-left: none;
+    }
+
+    .dashboardSummary>div>p{
+        margin: 0;
+    }
+
+    .dashboardSummaryBox2>a{
+        padding: 0.5rem;
+        margin: 1rem;
+        font:300 0.9rem "Roboto";
+    }
+}
+

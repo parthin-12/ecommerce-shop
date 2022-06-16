@@ -1,0 +1,238 @@
+.loginRegisterContainer{
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(178, 178, 178);
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+.loginRegisterBox{
+    background-color: white;
+    width: 25vw;
+    height: 70vh;
+    box-sizing:border-box;
+    overflow: hidden;
+    box-shadow: 2px 4px 5px rgb(120, 120, 120); 
+}
+
+.loginRegisterToggle{
+    display: flex;
+    height: 3vmax;
+}
+
+.loginRegisterToggle >p {
+    color: rgba(0,0,0,0.75);
+    font:300 1vmax "Roboto";
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginRegisterToggle >p:hover{
+    /* background-color: rgb(255, 67, 34); */
+    transform: scale(1.1);
+}
+
+.loginRegisterBox >  button {
+    /* display: flex; */
+    background-color: tomato;
+    height: 3px;
+    width: 50%;
+    border: none;
+    transition: all 0.5s;
+}
+
+
+.loginForm ,.registerForm{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
+    padding:2vmax;
+    justify-content:space-evenly;
+    transition: all 0.5s;
+}
+
+.loginForm >div,
+.registerForm >div
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.loginForm >div > input,
+.registerForm >div >input
+{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+    font:300 0.9vmax cursive;
+    outline: none;
+}
+
+.loginForm >div > svg,
+.registerForm >div >svg{
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0,0,0,0.65);
+}
+
+.loginForm >a {
+    color: rgba(0,0,0,0.65);
+    align-self: flex-end;
+    text-decoration: none;
+    transition: all 0.5s;
+    font:500 0.9vmax "Gill Sans";
+}
+
+.loginForm >a:hover{
+    color: black;
+}
+
+.registerForm{
+    transform: translateY(-100%) translateX(-100vmax);
+}
+
+
+#registerImage > img{
+    width: 3vmax;
+    border-radius: 100%;
+}
+#registerImage > input{
+    padding: 0;
+    display: flex;
+}
+
+#registerImage >input::file-selector-button{
+    cursor: pointer;
+    width: 100%;
+    height: 5vh;
+    border:none;
+    margin: 0%;
+    padding: 0 1vmax;
+    z-index: 2;
+    font:400 0.8vmax cursive;
+    transition: all 0.5s;
+    color: rgba(0,0,0,0.65);
+    outline: none;
+}
+
+#registerImage >input::file-selector-button:hover{
+    font:400 0.85vmax cursive;
+    background-color: rgba(220, 220, 220, 0.7);
+}
+
+
+
+.loginBtn,
+.registerBtn{
+    border: none;
+    background-color: tomato;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    font:300 0.9vmax "Roboto";
+    padding: 0.8vmax;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+}
+
+.loginBtn:hover,
+.registerBtn:hover{
+    background-color: rgb(255, 67, 34);
+    transform: scale(1.03);
+}
+
+.moveToNetural{
+    transform: translateX(0%);
+
+}
+
+.moveToNeturalForm{
+    transform: translateX(0%) translateY(-100%);
+}
+
+.moveToRight{
+    transform: translateX(100%);
+}
+
+.moveToLeft{
+    transform: translateX(-100%);
+}
+
+.moveToUp{
+    transform: translateY(-100%) ;
+}
+
+
+@media screen and (max-width:600px) {
+    .loginRegisterContainer {
+        background-color: white;
+    }
+    .loginRegisterBox{
+        width: 100vw;
+        height: 95vh;
+    }
+
+    .loginRegisterToggle{
+        height: 5vmax;
+    }
+
+    .loginRegisterToggle >p{
+        font: 300 1.5vmax "Roboto";
+    }
+
+    .loginForm,
+    .registerForm{
+        padding: 5vmax;
+    }
+
+    .loginForm >div > input,
+    .registerForm >div >input
+    {
+        padding: 2.5vmax 5vmax;
+        font:300 1.8vmax cursive;
+    }
+
+    .loginForm >div > svg,
+    .registerForm >div >svg
+    {
+        font-size: 2.8vmax;
+    }
+
+    .loginForm >a{
+        font: 500 1.8vmax "Gill Sans";
+    }
+
+    #registerImage > img{
+        width: 8vmax;
+        border-radius: 100%;
+    }
+
+    #registerImage >input::file-selector-button{
+        height: 7vh;
+        font:400 1.8vmax cursive;   
+    }
+
+    .loginBtn,
+    .registerBtn{
+        padding: 1.8vmax;
+        font:300 1.9vmax "Roboto";
+    }
+}

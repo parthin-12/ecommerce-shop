@@ -1,0 +1,89 @@
+.aboutUsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:100vh;
+    width: 100vw;
+    max-width: 100%;
+    background-color:rgb(147, 147, 147);
+    position:fixed;
+    top:0;
+    left: 0;
+}
+
+.aboutUsBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+    align-items: center;
+    width: 65vw;
+    height: 70vh;
+    box-sizing:border-box;
+    overflow: hidden;
+    box-shadow: 2px 4px 5px rgb(120, 120, 120); 
+}
+
+.aboutUsBox >img{
+    width: 13vmax;
+}
+
+.aboutUsBox >h1{
+    font:500 2.4vmax "Roboto";
+    color: rgba(0,0,0,0.65);
+}
+
+.aboutUsBox >p{
+    font:500 1.2vmax "Roboto";
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(0,0,0,0.75);
+}
+
+.aboutUsBox >p>p{
+    font:400 0.9vmax "Roboto";
+    color: rgba(0,0,0,0.65);
+}
+#instagramBtn{
+    font:400 1vmax "Roboto";
+    text-decoration: none;
+}
+
+.aboutUsBox > span{
+    font:400 1vmax "Roboto";
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(0,0,0,0.65);
+    padding: 0 15vmax;
+}
+
+@media screen and (max-width:600px){
+    .aboutUsBox >img{
+        width: 15vmax;
+    }
+    
+    .aboutUsBox >h1{
+        font:500 4vmax "Roboto";
+        color: rgba(0,0,0,0.65);
+    }
+    
+    .aboutUsBox >p{
+        font:500 2.4vmax "Roboto";
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgba(0,0,0,0.75);
+    }
+    
+    .aboutUsBox >p>p{
+        font:400 1.8vmax "Roboto";
+        color: rgba(0,0,0,0.65);
+    }
+    #instagramBtn{
+        font:400 2vmax "Roboto";
+        text-decoration: none;
+    }
+    
+    .aboutUsBox > span{
+        font:500 1.8vmax "Roboto";
+        color: rgba(0,0,0,0.65);
+        padding: 0 2vmax;
+    }
+}

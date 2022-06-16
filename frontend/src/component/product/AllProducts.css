@@ -1,0 +1,139 @@
+.productsHeading{
+    margin:2vmax auto;
+    width:15vw;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    padding: 2vmax;
+    color:rgba(0,0,0,0.65);
+    font: 500 1.5vmax "Roboto";
+    text-align: center;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10vmax;
+}
+
+.paginationBox{
+    display: flex;
+    justify-content: center;
+    margin:6vmax;
+    /* padding-bottom: 10vmax; */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.pageItems{
+    list-style: none;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.25);
+    padding: 1vmax 1.5vmax;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.pageItems:first-child{
+    border-radius: 10px 0 0 10px;
+}
+
+.pageItems:last-child{
+    border-radius: 0 10px 10px 0;
+}
+
+.pageLink{
+    text-decoration: none;
+    font:300 0.8vmax "Roboto";
+    color:rgb(80,80,80);
+    transition: all 0.5s;
+} 
+
+.pageItems:hover{
+    background-color:rgba(38, 38, 38, 0.25);
+}
+
+.activePageItems{
+    background-color: tomato;
+}
+
+.activePageItems:hover{
+    background-color:rgb(255, 66, 32);
+}
+
+.activePageLink{
+    color:rgb(75, 126, 0);
+    color: white;
+}
+
+
+.productNotFoundBox{
+    display: flex;
+    height:70vh;
+    width: 100vw;
+    min-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10vmax;
+}
+.productNotFound{
+    font:600 1.8vmax "Roboto";
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+.warningIcon{
+    transition: all 0.5s;
+}
+.warningIcon:hover{
+    transform: scale(1.1);
+}
+
+.filterBox{
+    width: 10vmax;
+    position:absolute;
+    top:10vmax;
+    left: 4vmax;
+}
+
+.categoryBox{
+    padding:0;
+}
+
+.categoryLink{
+    list-style: none;
+    color: rgba(0,0,0,0.5);
+    font: 400 0.9vmax "Roboto";
+    margin:0.4vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+/* #categoryLinkAll{
+    color:rgb(0,0,0);
+} */
+
+/* .categoryLink:hover{
+    color: tomato;
+} */
+
+.filterBox > fieldset {
+    border:1px solid rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width:600px){
+    .filterBox{
+        width: 20vmax;
+        position:static;
+        margin: auto;
+    }
+    .pageLink{
+        font: 400 1.5vmax "Roboto";
+
+    }
+    .categoryLink{
+        font: 400 1.8vmax "Roboto";
+    }
+}

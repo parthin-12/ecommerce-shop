@@ -1,0 +1,35 @@
+.PageNotFoundBox{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    width: 100vw;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+
+}
+
+.PageNotFound{
+    font:300 2vmax "Roboto";
+    padding-top: 1.2vmax;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+.PageNotFoundBox >a{
+    background-color: rgb(55,55,55);
+    color: white;
+    padding: 1vmax 3vmax;
+    text-decoration: none;
+    font:400 1vmax "Roboto";
+    border: none;
+    cursor: pointer;
+    margin: 2vmax 0;
+    transition: all 0.5s;
+}
+
+.PageNotFoundBox>a:hover{
+    background-color: rgb(30, 30, 30);
+    transform: scaleX(1.03);
+}

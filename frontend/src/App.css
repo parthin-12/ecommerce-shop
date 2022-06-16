@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    scroll-behavior: smooth;
+}
+
+ /* for chrome,safari,Edge,opera,brave */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* firebox */
+
+input [type="number"]{
+    -moz-appearance: textfield;
+}
+
+body{
+    cursor:url("./images/cursor.png") , auto;
+
+}
+
+
+.redColor{
+    color: red !important;
+}
+
+.greenColor{
+    color: green !important;
+}
+
+
+.masterColor{
+    color:rgb(255, 100, 0) !important;
+}

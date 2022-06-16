@@ -1,0 +1,153 @@
+.newProductContainer{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(206, 206, 206);
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.newProductContainer h1{
+    color: rgba(0,0,0,0.75);
+    font: 300 2rem "Roboto";
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.updateProductForm{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
+    padding:3vmax;
+    justify-content:space-evenly;
+    width: 42vh;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.35);
+}
+
+.updateProductForm >div
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.updateProductForm >div >input,
+.updateProductForm >div >select,
+.updateProductForm >div >textarea
+{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+    font:300 0.9vmax cursive;
+    outline: none;
+}
+
+.updateProductForm >div >svg{
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0,0,0,0.65);
+}
+
+
+.updateProductImages{
+    width: 100%;
+    overflow: auto;
+}
+
+.updateProductImages > img{
+    width: 3vmax;
+    margin: 0 0.5vmax;
+}
+#updateProductFile > input{
+    padding: 0;
+    display: flex;
+}
+
+#updateProductFile >input::file-selector-button{
+    cursor: pointer;
+    width: 100%;
+    height: 5vh;
+    border:none;
+    margin: 0%;
+    padding: 0 1vmax;
+    z-index: 2;
+    font:400 0.8vmax cursive;
+    transition: all 0.5s;
+    color: rgba(0,0,0,0.65);
+    outline: none;
+}
+
+#updateProductFile >input::file-selector-button:hover{
+    font:400 0.85vmax cursive;
+    background-color: rgba(220, 220, 220, 0.7);
+}
+
+
+
+#updateProductBtn{
+    border: none;
+    background-color: tomato;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    font:300 0.9vmax "Roboto";
+    padding: 0.8vmax;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+}
+
+#updateProductBtn:hover{
+    background-color: rgb(255, 67, 34);
+    transform: scale(1.03);
+}
+
+
+@media screen and (max-width:600px) {
+
+    .newProductContainer{
+        background-color: white;
+    }
+
+    .updateProductForm{
+        padding: 5vmax;
+        max-width: 100%;
+    }
+
+    .updateProductForm >div >input,
+    .updateProductForm >div >select,
+    .updateProductForm >div >textarea
+    {
+        padding: 2.5vmax 5vmax;
+        font:300 1.8vmax cursive;
+    }
+
+    .updateProductForm >div >svg
+    {
+        font-size: 2.8vmax;
+    }
+
+    #updateProductFile > img{
+        width: 8vmax;
+        border-radius: 100%;
+    }
+
+    #updateProductFile >input::file-selector-button{
+        height: 7vh;
+        font:400 1.8vmax cursive;   
+    }
+
+    #updateProductBtn{
+        padding: 1.8vmax;
+        font:300 1.9vmax "Roboto";
+    }
+}
