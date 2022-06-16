@@ -1,7 +1,7 @@
 import orderSchema from "../models/orderModel.js";
 import productSchema from "../models/productModel.js";
 import varaiblesSchema from "../models/varaiblesModel.js";
-import ErrorHandler from "../utils/errorhandler.js";
+import ErrorHandler from "../utils/utilsErrorHandler.js";
 import { asyncTryCatch } from "../middleware/trycatch.js"
 import ApiFeatures from "../utils/apiFeatures.js";
 import varaiblesModel from "../models/varaiblesModel.js";

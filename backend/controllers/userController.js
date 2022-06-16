@@ -1,5 +1,5 @@
 import userSchema from "../models/userModel.js";
-import ErrorHandler from "../utils/errorhandler.js";
+import ErrorHandler from "../utils/utilsErrorHandler.js";
 import { asyncTryCatch } from "../middleware/trycatch.js";
 import sendToken from "../utils/sendToken.js"
 import sendMail from "../utils/sendMail.js"

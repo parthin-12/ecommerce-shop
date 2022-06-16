@@ -1,4 +1,4 @@
-import ErrorHandler from "../utils/errorhandler.js";
+import ErrorHandler from "../utils/utilsErrorHandler.js";
 import { asyncTryCatch } from "./trycatch.js";
 import jwt from "jsonwebtoken";
 import userSchema from "../models/userModel.js";
