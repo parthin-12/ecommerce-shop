@@ -5,7 +5,9 @@ import logo from "./../../images/ecommerceLogo2.png";
 import ExpandMoreSharpIcon from "@material-ui/icons/ExpandMoreSharp";
 import PostAddSharpIcon from "@material-ui/icons/PostAddSharp";
 import AddSharpIcon from "@material-ui/icons/AddSharp";
-import {AiTwotoneApi} from "react-icons/ai"
+import {AiTwotoneApi} from "react-icons/ai";
+import {BiCategory} from "react-icons/bi";
+import {MdOutlineCategory} from "react-icons/md";
 import ImportExportSharpIcon from "@material-ui/icons/ImportExportSharp";
 import ListAltSharpIcon from "@material-ui/icons/ListAltSharp";
 import DashboardSharpIcon from "@material-ui/icons/DashboardSharp";
@@ -42,6 +44,23 @@ const Sider = () => {
                 </TreeItem>
             </TreeView>
         </Link>
+
+        <Link to="#">
+            <TreeView
+            defaultExpandIcon={<ExpandMoreSharpIcon/>}
+            defaultCollapseIcon={<ImportExportSharpIcon/>} 
+            >
+                <TreeItem label="Categories" nodeId="1">
+                    <Link to="/admin/category/create">
+                        <TreeItem label="Create" nodeId="2" icon={<BiCategory/>} />
+                    </Link>
+                    <Link to="/admin/category/update">
+                        <TreeItem label="Update" nodeId="3" icon={<MdOutlineCategory/>} />
+                    </Link>
+                </TreeItem>
+            </TreeView>
+        </Link>
+
         <Link to="/admin/orders">
             <p>
                 <ListAltSharpIcon/>

@@ -1,0 +1,105 @@
+.newCategoryContainer{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(206, 206, 206);
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.newCategoryContainer h1{
+    color: rgba(0,0,0,0.75);
+    font: 300 2rem "Roboto";
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.updateCategoryForm{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:auto;
+    padding:3vmax;
+    justify-content:space-evenly;
+    width: 42vh;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.35);
+}
+
+.updateCategoryForm >div
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.updateCategoryForm >div >select
+{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+    font:300 0.9vmax cursive;
+    outline: none;
+}
+
+.updateCategoryForm >div >svg{
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0,0,0,0.65);
+}
+
+
+#updateCategoryBtn{
+    border: none;
+    background-color: tomato;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    font:300 0.9vmax "Roboto";
+    padding: 0.8vmax;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    transition: all 0.5s;
+}
+
+#updateCategoryBtn:hover{
+    background-color: rgb(255, 67, 34);
+    transform: scale(1.03);
+}
+
+
+@media screen and (max-width:600px) {
+
+    .newCategoryContainer{
+        background-color: white;
+    }
+
+    .updateCategoryForm{
+        padding: 5vmax;
+        max-width: 100%;
+    }
+
+    .updateCategoryForm >div >select
+    {
+        padding: 2.5vmax 5vmax;
+        font:300 1.8vmax cursive;
+    }
+
+    .updateProductForm >div >svg
+    {
+        font-size: 2.8vmax;
+    }
+
+
+    #updateCategoryBtn{
+        padding: 1.8vmax;
+        font:300 1.9vmax "Roboto";
+    }
+}

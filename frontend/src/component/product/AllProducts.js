@@ -63,7 +63,6 @@ const AllProducts = () => {
         
         if(!e.currentTarget){
             e.currentTarget=document.getElementById("categoryLinkAll");
-            console.log(e.currentTarget.classList);
         }
         if(Object.keys(color).length!==0){
             color.style.color='rgba(0,0,0,0.5)';
@@ -90,10 +89,7 @@ const AllProducts = () => {
     }
     , [dispatch,error,currentPageNo,keyword,price,category,rating]);
 
-    if(categories){
-        if(allcategories.length===0)
-            setAllcategories(categories);
-    }
+    categories && categories.length!==0 && allcategories.length===0 && setAllcategories(categories)
     
 
     const warningIconOptions={

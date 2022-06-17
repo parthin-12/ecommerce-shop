@@ -43,6 +43,8 @@ import UsersList from './component/admin/UsersList.js';
 import UpdateUser from './component/admin/UpdateUser.js';
 import ProductReviews from './component/admin/ProductReviews.js';
 import CreateProducts from './component/admin/CreateProducts.js';
+import CreateCategories from './component/admin/CreateCategories.js';
+import UpdateCategories from './component/admin/UpdateCategories.js';
 
 function App() {
 
@@ -89,13 +91,14 @@ function App() {
       <Route exact path="/cart" element={<Cart />} />
       <Route exact path="/account/order/:id" element={isAuth?<OrderDetails/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
       <Route exact path="/shipping" element={isAuth?<Shipping/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
-      {stripeApiKey && 
+    {stripeApiKey && 
         <Route exact path="/order/payment/process" element={isAuth?<Elements stripe={loadStripe(stripeApiKey)}>
           <PaymentOrder/>
           </Elements>
           :
           (loading===false?<Navigate to="/login"/>:<Loader/>)} />
         }
+
       <Route exact path="/order/payment/done" element={isAuth?<OrderSuccess/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
       <Route exact path="/account/orders" element={isAuth?<MyOrders/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
         
@@ -111,6 +114,8 @@ function App() {
       <Route exact path="/admin/user/:id" element={(isAuth && (user.role==="admin" || user.role==="master"))?<UpdateUser/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
       <Route exact path="/admin/reviews" element={(isAuth && (user.role==="admin" || user.role==="master"))?<ProductReviews/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
       <Route exact path="/admin/api/create" element={(isAuth && (user.role==="admin" || user.role==="master"))?<CreateProducts/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
+      <Route exact path="/admin/category/create" element={(isAuth && (user.role==="admin" || user.role==="master"))?<CreateCategories/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
+      <Route exact path="/admin/category/update" element={(isAuth && (user.role==="admin" || user.role==="master"))?<UpdateCategories/>:(loading===false?<Navigate to="/login"/>:<Loader/>)} />
       <Route path="*" element={<PageNotFound/>}/>  
     </Routes> 
     <Footer />

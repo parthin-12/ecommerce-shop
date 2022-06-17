@@ -42,7 +42,7 @@ const UpdateProfile = () => {
             setEmail(user.email);
             setAvatarPreview(user.avatar.url==="sampleUrl"?Profile:user.avatar.url)
         }
-    }, [dispatch,navigate,error,isUpdated])
+    }, [dispatch,navigate,error,isUpdated,user])
     
 
     const updateProfileDataChange=(e)=>{

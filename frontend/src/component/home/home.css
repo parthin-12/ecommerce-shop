@@ -63,6 +63,7 @@
  .productCard{
      display: flex;
      flex-direction: column;
+     justify-content: space-evenly;
      text-decoration: none;
      color:rgb(48,48,48);
      margin: 2vmax;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ALL_PRODUCT_FAIL, ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, ALL_REVIEWS_FAIL, ALL_REVIEWS_REQUEST, ALL_REVIEWS_SUCCESS, CLEAR_ERRORS, DELETE_PRODUCT_FAIL, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_SUCCESS, DELETE_REVIEW_FAIL, DELETE_REVIEW_REQUEST, DELETE_REVIEW_SUCCESS, NEW_PRODUCT_FAIL, NEW_PRODUCT_REQUEST, NEW_PRODUCT_SUCCESS, NEW_REVIEW_FAIL, NEW_REVIEW_REQUEST, NEW_REVIEW_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, UPDATE_PRODUCT_FAIL, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_SUCCESS } from "../constants/productConstants";
+import { ALL_PRODUCT_FAIL, ALL_PRODUCT_REQUEST, ALL_PRODUCT_SUCCESS, ALL_REVIEWS_FAIL, ALL_REVIEWS_REQUEST, ALL_REVIEWS_SUCCESS, CLEAR_ERRORS, DELETE_PRODUCT_FAIL, DELETE_PRODUCT_REQUEST, DELETE_PRODUCT_SUCCESS, DELETE_REVIEW_FAIL, DELETE_REVIEW_REQUEST, DELETE_REVIEW_SUCCESS, NEW_CATEGORY_FAIL, NEW_CATEGORY_REQUEST, NEW_CATEGORY_SUCCESS, NEW_PRODUCT_FAIL, NEW_PRODUCT_REQUEST, NEW_PRODUCT_SUCCESS, NEW_REVIEW_FAIL, NEW_REVIEW_REQUEST, NEW_REVIEW_SUCCESS, PRODUCT_DETAILS_FAIL, PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, UPDATE_CATEGORY_FAIL, UPDATE_CATEGORY_REQUEST, UPDATE_CATEGORY_SUCCESS, UPDATE_PRODUCT_FAIL, UPDATE_PRODUCT_REQUEST, UPDATE_PRODUCT_SUCCESS } from "../constants/productConstants";
 
 export const getProducts = (pageNo=1,keyword="",price=[0,50000],category,rating=0,pageSize=8) => async (dispatch) =>{
 
@@ -197,7 +197,6 @@ export const fetchProductsApi = (link) =>async(dispatch) =>{
 
         const {data}=await axios.get(link);
 
-        console.log(data);
         dispatch({
             type:"FETCH_API_SUCCESS",
             payload:data
@@ -206,6 +205,55 @@ export const fetchProductsApi = (link) =>async(dispatch) =>{
     } catch (error) {
         dispatch({
             type:"FETCH_API_FAIL",
+            payload:error.response.data.message
+        }); 
+    }
+}
+
+
+export const createCategoryAction = (category) =>async(dispatch) =>{
+    try {
+        dispatch({
+            type:NEW_CATEGORY_REQUEST
+        });
+
+        const link="/api/v1/category/create";
+        const config={headers:{"Content-Type":"application/json"}};
+        const {data}=await axios.put(link,category,config);
+
+        dispatch({
+            type:NEW_CATEGORY_SUCCESS,
+            payload:data
+        })
+
+    } catch (error) {
+        dispatch({
+            type:NEW_CATEGORY_FAIL,
+            payload:error.response.data.message
+        }); 
+    }
+}
+
+
+export const updateCategoryAction = (sendData,category) =>async(dispatch) =>{
+    try {
+        dispatch({
+            type:UPDATE_CATEGORY_REQUEST
+        });
+
+        const link=`/api/v1/category/update?category=${category}`;
+        const config={headers:{"Content-Type":"application/json"}};
+
+        const {data}=await axios.put(link,sendData,config);
+
+        dispatch({
+            type:UPDATE_CATEGORY_SUCCESS,
+            payload:data
+        })
+
+    } catch (error) {
+        dispatch({
+            type:UPDATE_CATEGORY_FAIL,
             payload:error.response.data.message
         }); 
     }

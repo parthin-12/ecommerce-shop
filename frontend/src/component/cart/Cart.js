@@ -26,7 +26,7 @@ const Cart = () => {
         <div className="cartPage">
             <div className="cartHeader">
                 <p>Product</p>
-                <p>Quantity</p>
+                <p>Quantity1</p>
                 <p>Subtotal</p>
             </div>
 

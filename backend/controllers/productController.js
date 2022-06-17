@@ -305,3 +305,81 @@ export const deleteProductReview = asyncTryCatch(async (req, res, next) => {
     }); 
 
 });
+
+
+/////create Category
+
+export const createCategory = asyncTryCatch(async (req, res, next) => {
+
+    const varaibles = await varaiblesModel.findOne();
+
+    if(!varaibles){
+        return next(new ErrorHandler("Categories Not Found", 404));
+    }
+    const isCategory=varaibles.categories.find(e=>e===req.body.category);
+
+    if(isCategory){
+        return next(new ErrorHandler("Category Already Exist", 404));
+    }
+
+    varaibles.categories.push(req.body.category);
+
+    await varaibles.save({validateBeforeSave:false});
+
+    return res.status(200).json({
+        success:true
+    }); 
+
+});
+
+
+//// Updating and Deleting Category
+
+export const updateCategory = asyncTryCatch(async (req, res, next) => {
+
+    let varaibles = await varaiblesModel.findOne();
+
+    if(!varaibles){
+        return next(new ErrorHandler("Categories Not Found", 404));
+    }
+
+    let apiFeature = new ApiFeatures(productSchema.find(), req.query).filter();
+    let products = await apiFeature.query;
+
+
+    
+    if(products){
+        for (let i = 0; i < products.length; i++) {
+            const product= await productSchema.findById(products[i]._id);
+            
+            if(req.body.updatedCategory!=="Delete"){
+                product.category=req.body.updatedCategory;
+                await product.save({validateBeforeSave:false});
+            }else{
+                for (let j = 0; j < product.images.length; j++) {
+                    await cloudinary.v2.uploader.destroy(product.images[j].public_id);
+                    
+                }
+            
+                /// outOfStock varaible update in varaiblesSchema
+                if(product.stock===0){
+                    const variables = await varaiblesModel.findOne();
+                        variables.outOfStock=variables.outOfStock-1;
+                        await variables.save({validateBeforeSave:false});
+                }
+            
+                await product.remove();
+            }   
+        }
+    }
+
+    let categories=varaibles.categories.filter(e=>e!==req.body.oldCategory);
+    varaibles.categories=categories;
+
+    await varaibles.save({validateBeforeSave:false});
+
+    return res.status(200).json({
+        success:true
+    }); 
+
+});

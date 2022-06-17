@@ -41,13 +41,13 @@ const CreateProducts = () => {
     const [isApiLink ,setIsApILink]=useState(false);
     const [creating ,setCreating]=useState(false);
     const [arrayName, setArrayName] = useState("");
-    const [name, setName] = useState("title");
-    const [price, setPrice] = useState("price");
-    const [priceMultiper, setPriceMultiper] = useState(1);
-    const [desc, setDesc] = useState("description");
-    const [category, setCategory] = useState("category");
+    const [name, setName] = useState("");
+    const [price, setPrice] = useState("");
+    const [priceMultiper, setPriceMultiper] = useState();
+    const [desc, setDesc] = useState("");
+    const [category, setCategory] = useState("");
     const [stock, setStock] = useState("");
-    const [images, setImages] = useState("image");
+    const [images, setImages] = useState("");
 
     useEffect(() => {
       if(error){

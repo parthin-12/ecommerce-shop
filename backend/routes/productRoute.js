@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllProducts, createProduct, updateProduct, deleteProduct, getProduct, createProductReview, getProductReviews, deleteProductReview} from "../controllers/productController.js";
+import { getAllProducts, createProduct, updateProduct, deleteProduct, getProduct, createProductReview, getProductReviews, deleteProductReview, createCategory, updateCategory} from "../controllers/productController.js";
 import { isUserHaveAuth, userRole } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -13,5 +13,9 @@ router.route("/reviews").get(isUserHaveAuth,userRole("admin","master"),getProduc
 .delete(isUserHaveAuth,userRole("admin","master"),deleteProductReview);
 
 router.route("/product/:id").get(getProduct);
+
+router.route("/category/create").put(isUserHaveAuth,userRole("admin","master"),createCategory);
+router.route("/category/update").put(isUserHaveAuth,userRole("admin","master"),updateCategory);
+
 
 export default router;

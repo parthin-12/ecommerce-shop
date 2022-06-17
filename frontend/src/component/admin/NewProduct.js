@@ -57,7 +57,9 @@ const NewProduct = () => {
 
     const createProductSubmitFormHandler =(e)=>{
         e.preventDefault();
-
+        if(!category){
+            return toast.error("Please Select Category");
+        }
         const myform = new FormData();
 
         myform.set("name",name);
@@ -129,6 +131,7 @@ const NewProduct = () => {
                         <textarea
                             placeholder='Product Description'
                             value={desc}
+                            required
                             onChange={(e)=>(setDesc(e.target.value))} 
                             cols="30"
                             rows="1" 
@@ -138,7 +141,8 @@ const NewProduct = () => {
                     <div>
                         <AccountTreeSharpIcon />
                         <select
-                            onChange={(e)=>(setCategory(e.target.value))} 
+                            onChange={(e)=>(setCategory(e.target.value))}
+                            required 
                         >
                             <option value="">Choose Category</option>
                             {categories && categories.map((e)=>(
